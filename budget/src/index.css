@@ -17,6 +17,10 @@ svg {
   pointer-events: none;
 }
 
+svg .pie-segment {
+  pointer-events: auto; /* Allow events on pie segments */
+}
+
 :root {
   /* fonts */
   --fs-200: clamp(0.78rem, calc(0.71rem + 0.35vw), 0.96rem);
@@ -630,3 +634,16 @@ table a {
   background-color: #fff;
   border:none;
 } */
+
+.chart-container {
+  display: flex;       /* Enables flexbox layout */
+  gap: 20px;           /* Adds some space between the Chart and BarGraph */
+  justify-content: space-around; /* Space items evenly around the container */
+  align-items: center; /* Align items vertically centered */
+}
+
+/* Optionally: Add some width constraints to each chart */
+.chart-container > * {
+  flex: 1;             /* Ensures equal width for Chart and BarGraph */
+  max-width: 45%;      /* Limits the width of each component */
+}

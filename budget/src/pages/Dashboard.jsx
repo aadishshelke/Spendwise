@@ -11,6 +11,10 @@ import AddBudgetForm from "../components/AddBudgetForm";
 import AddExpenseForm from "../components/AddExpenseForm";
 import BudgetItem from "../components/BudgetItem";
 import Table from "../components/Table";
+import Chart from "../components/Chart";
+import LineGraph from "../components/LineGraph";
+import BarGraph from "../components/BarGraph";
+
 
 // loader
 export function dashboardLoader () {
@@ -98,6 +102,39 @@ export async function dashboardAction({request}){
 
 const Dashboard = () => {
     const { userName, budgets, expenses } = useLoaderData();
+
+    // const chartData = budgets.map(budget => ({
+    //     name: budget.name,   // Use the name of the budget
+    //     amountBudget: parseFloat(budget.amount), // Use the amount of the budget
+    //     color: budget.color
+    // }));
+    // const chartExpenseData = expenses.map(expense => ({
+    //     // name: expense.name,   // Use the name of the expense
+    //     amountExpense: parseFloat(expense.amount), // Use the amount of the expense
+    //     // color: expense.color
+    // }));
+    // Calculate the total expense amount per budget
+  const combinedChartData = budgets.map(budget => {
+    // Filter and sum up all expenses related to this budget
+    const totalExpensesForBudget = expenses
+      .filter(expense => expense.budgetID === budget.id)
+      .reduce((total, expense) => total + parseFloat(expense.amount), 0); // Sum expenses
+
+    return {
+      name: budget.name,  // Budget name for X-axis
+      budgetAmount: parseFloat(budget.amount),  // Budgeted amount
+      expenseAmount: totalExpensesForBudget,  // Total expenses for this budget
+      totalSpent: parseFloat(budget.amount) + totalExpensesForBudget, // Total spent (budget + expenses)
+      color: budget.color // Use the budget's color for the chart
+    };
+  });
+
+  const chartColors = combinedChartData.map(data => data.color);
+
+    // const chartColors = chartData.map(budget => budget.color);
+
+    // console.log('Colors:', chartData.map(budget => budget.color)); 
+
     
     return (
         <>
@@ -163,6 +200,12 @@ const Dashboard = () => {
                                 )
                             }
                         </div>
+                        {/* <h2>Real-Time Analytics</h2> */}
+                        {/* <div className="chart-container"> */}
+                        <Chart data={combinedChartData} colors={chartColors}/>
+                        <BarGraph data={combinedChartData} colors={chartColors}/>
+                        {/* </div > */}
+                        <LineGraph />
                     </div>
                 ) 
                 : <Intro />
