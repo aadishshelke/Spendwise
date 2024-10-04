@@ -14,6 +14,7 @@ import Table from "../components/Table";
 import Chart from "../components/Chart";
 import LineGraph from "../components/LineGraph";
 import BarGraph from "../components/BarGraph";
+import ChatB from "../components/ChatB";
 
 
 // loader
@@ -142,6 +143,8 @@ const Dashboard = () => {
                 userName ? (
                     <div className="dashboard">
                         <h1>Welcome Back, <span className="accent">{userName}</span></h1>
+                        <ChatB />
+
                         <div className="grid-sm">
                             {
                                 budgets && budgets.length > 0 ?
@@ -201,10 +204,10 @@ const Dashboard = () => {
                             }
                         </div>
                         {/* <h2>Real-Time Analytics</h2> */}
-                        {/* <div className="chart-container"> */}
+                        <div className="chart-container">
                         <Chart data={combinedChartData} colors={chartColors}/>
                         <BarGraph data={combinedChartData} colors={chartColors}/>
-                        {/* </div > */}
+                        </div >
                         <LineGraph />
                     </div>
                 ) 

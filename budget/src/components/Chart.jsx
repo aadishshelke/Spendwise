@@ -17,16 +17,27 @@ const Chart = ({ data, colors }) => {
     //     setSelectedAmount(amount); // Set the selected amount on click
     // };
 
+    const total = () => {
+        let sum = 0
+        for(let i=0;i<data.length;i++)
+        {
+            sum = sum + data[i].budgetAmount
+            console.log(sum)
+        }
+        return sum
+    }
+
     return (
         <div>
             <h2>Real-Time Analytics</h2>
-        <PieChart width={700} height={700} >
+        <PieChart width={700} height={700} 
+        style={{ marginTop: '-100px' , marginLeft : '-120px'}}>
             <Pie
             className="pie-segment" 
                 activeIndex={activeIndex}
                 data={data}
                 dataKey="budgetAmount"  // Use "amount" instead of "students"
-                outerRadius={250}
+                outerRadius={200}
                 fill="green"
                 onMouseEnter={onPieEnter}
                 onMouseLeave={onPieLeave}
@@ -43,6 +54,7 @@ const Chart = ({ data, colors }) => {
             </Pie>
             <Tooltip />
         </PieChart>
+        <h2 style={{ marginTop: '-55px' , fontSize : '30px'}} >{`Total Amount Budgeted : ${total()}`}</h2>
         {/* {selectedAmount !== null && (
                 <div style={{ marginTop: '20px', fontWeight: 'bold' }}>
                     Selected Amount: {selectedAmount}

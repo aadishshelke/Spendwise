@@ -1,6 +1,7 @@
 import { useFetcher } from "react-router-dom"
 import { useEffect, useRef} from "react"
 import { PlusCircleIcon } from "@heroicons/react/24/solid"
+import PaymentButton from "./PaymentButton"
 
 const AddExpenseForm = ({budgets}) => {
     const fetcher = useFetcher()
@@ -75,10 +76,12 @@ const AddExpenseForm = ({budgets}) => {
                 name="_action" 
                 value="createExpense"
                 />
+                <div style={{display : 'flex'}}>
                 <button
                     type="submit"
                     className="btn btn--dark"
                     disabled={isSubmitting}
+                    style={{marginRight: '90px'}}
                 >
                     {isSubmitting ? <span>Submitting...</span>  
                      : (
@@ -89,7 +92,11 @@ const AddExpenseForm = ({budgets}) => {
                     )}
 
                 </button>
+                {/* <button className="btn btn--dark" style={{marginLeft : '260px'}}></button> */}
+                <PaymentButton/>
+                </div>
             </fetcher.Form>
+           
         </div>
 
     )

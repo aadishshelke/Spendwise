@@ -42,6 +42,8 @@ svg .pie-segment {
   --light: 180 14% 85%;
   --warning: 4 66% 63%;
   --border : 0 0% 87.93%;
+  --gpay-light: "black";
+  --gpay-dark: "white";
 
   /* utils */
   --space-xs: 8px;
@@ -55,6 +57,7 @@ svg .pie-segment {
   --round-md: 10px;
   --round-lg: 25px;
   --round-full: 100vmax;
+  
 
   /* toast customizations */
   --toastify-color-success: hsl(var(--accent));
@@ -81,7 +84,6 @@ body {
   --bkg : 190 60% 98%; 
   --text: 185 26% 9%;
   --border : 240 27% 16%;
-
 }
 
 #dark {
