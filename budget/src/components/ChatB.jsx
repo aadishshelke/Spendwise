@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 const steps = [
     {
         id: '0',
-        message: 'Hey there! Welcome to FinBot!',
+        message: 'Hey there! Welcome to Bean!',
         trigger: '1',
     }, 
     {

@@ -4,11 +4,10 @@ import logomark from "../assets/logomark.svg"
 
 import { TrashIcon,MoonIcon } from '@heroicons/react/24/solid'
 import ToggleTheme from "./ToggleTheme";
+import URLClassifier from "./URLClassifier";
 // import { toggle } from "../helpers";
 
 const Nav = ({userName}) => {
-
-
     return (
         <nav>
             <NavLink
@@ -25,6 +24,7 @@ const Nav = ({userName}) => {
                 
             </button> */}
             <ToggleTheme />
+            <URLClassifier />
             {
                 userName && (
                     <Form
