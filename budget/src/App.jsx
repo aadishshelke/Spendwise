@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ExpensesPage, { expensesAction, expensesLoader } from "./pages/ExpensesPage";
 import BudgetPage, { budgetAction, budgetLoader } from "./pages/BudgetPage";
 import { deleteBudget } from "./actions/deleteBudget";
+import FraudPage from "./pages/FraudPage";
 
 // components
 // import ToggleTheme from "./components/ToggleTheme";
@@ -49,6 +50,13 @@ const router = createBrowserRouter([
       {
         path: "expenses",
         element: <ExpensesPage />,
+        loader: expensesLoader,
+        action: expensesAction,
+        errorElement: <Error />
+      },
+      {
+        path: "fraud",
+        element: <FraudPage />,
         loader: expensesLoader,
         action: expensesAction,
         errorElement: <Error />

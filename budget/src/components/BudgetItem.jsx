@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const BudgetItem = ({budget, showDelete=false}) => {
     const { id,name,amount,color } = budget;
     const spent = calculateSpentByBudget(id);
-    console.log(id);
+    // console.log(id);
     return (
         <div 
         className="budget"

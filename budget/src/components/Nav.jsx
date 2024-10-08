@@ -1,10 +1,13 @@
-import { Form, NavLink } from "react-router-dom";
+import { Form, NavLink, Link } from "react-router-dom";
+// import { Link, useLoaderData } from "react-router-dom";
+
 
 import logomark from "../assets/logomark.svg"
 
 import { TrashIcon,MoonIcon } from '@heroicons/react/24/solid'
 import ToggleTheme from "./ToggleTheme";
 import URLClassifier from "./URLClassifier";
+import BudgetEntry from "./BudgetEntry";
 // import { toggle } from "../helpers";
 
 const Nav = ({userName}) => {
@@ -24,6 +27,13 @@ const Nav = ({userName}) => {
                 
             </button> */}
             <ToggleTheme />
+            {/* <BudgetEntry /> */}
+            <Link
+                to="fraud"
+                className="btn btn--dark"
+            >
+            Payment Safety
+            </Link>
             <URLClassifier />
             {
                 userName && (

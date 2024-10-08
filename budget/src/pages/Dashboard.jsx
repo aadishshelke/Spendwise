@@ -15,6 +15,8 @@ import Chart from "../components/Chart";
 import LineGraph from "../components/LineGraph";
 import BarGraph from "../components/BarGraph";
 import ChatB from "../components/ChatB";
+import ChatbotEmbed from "../components/ChatbotEmbed";
+import SendOTP from "../components/SendOtp";
 
 
 // loader
@@ -114,6 +116,8 @@ const Dashboard = () => {
     //     amountExpense: parseFloat(expense.amount), // Use the amount of the expense
     //     // color: expense.color
     // }));
+
+    
     // Calculate the total expense amount per budget
   const combinedChartData = budgets.map(budget => {
     // Filter and sum up all expenses related to this budget
@@ -143,8 +147,9 @@ const Dashboard = () => {
                 userName ? (
                     <div className="dashboard">
                         <h1>Welcome Back, <span className="accent">{userName}</span></h1>
-                        <ChatB />
-
+                        {/* <ChatB /> */}
+                        <ChatbotEmbed />
+                        {/* <SendOTP /> */}
                         <div className="grid-sm">
                             {
                                 budgets && budgets.length > 0 ?

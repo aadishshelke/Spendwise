@@ -16,7 +16,7 @@ const BarGraph = ({data,colors}) => {
         for(let i=0;i<data.length;i++)
         {
             sum = sum + data[i].expenseAmount
-            console.log(sum)
+            // console.log(sum)
         }
         return sum
     }

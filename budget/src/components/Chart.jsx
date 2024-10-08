@@ -22,7 +22,7 @@ const Chart = ({ data, colors }) => {
         for(let i=0;i<data.length;i++)
         {
             sum = sum + data[i].budgetAmount
-            console.log(sum)
+            // console.log(sum)
         }
         return sum
     }
