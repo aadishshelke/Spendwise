@@ -106,16 +106,16 @@ export async function dashboardAction({request}){
 const Dashboard = () => {
     const { userName, budgets, expenses } = useLoaderData();
 
-    // const chartData = budgets.map(budget => ({
-    //     name: budget.name,   // Use the name of the budget
-    //     amountBudget: parseFloat(budget.amount), // Use the amount of the budget
-    //     color: budget.color
-    // }));
-    // const chartExpenseData = expenses.map(expense => ({
-    //     // name: expense.name,   // Use the name of the expense
-    //     amountExpense: parseFloat(expense.amount), // Use the amount of the expense
-    //     // color: expense.color
-    // }));
+    const chartData = budgets.map(budget => ({
+        name: budget.name,   // Use the name of the budget
+        amountBudget: parseFloat(budget.amount), // Use the amount of the budget
+        color: budget.color
+    }));
+    const chartExpenseData = expenses.map(expense => ({
+        // name: expense.name,   // Use the name of the expense
+        amountExpense: parseFloat(expense.amount), // Use the amount of the expense
+        // color: expense.color
+    }));
 
     
     // Calculate the total expense amount per budget

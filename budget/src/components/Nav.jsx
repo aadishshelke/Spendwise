@@ -27,6 +27,11 @@ const Nav = ({userName}) => {
                 
             </button> */}
             <ToggleTheme />
+
+            <div id="google_translate_element"></div>
+
+
+
             {/* <BudgetEntry /> */}
             <Link
                 to="fraud"

@@ -14,8 +14,8 @@ const ToggleTheme = () => {
     <ReactSwitch
       onChange ={toggleTheme} 
       checked ={theme==="dark"} 
-      offColor='#1e1e34' 
-      onColor='#fff'
+      offColor='#fff' 
+      onColor='#1e1e34'
       onHandleColor='#1dbbc3'
       offHandleColor='#fff'
       uncheckedHandleIcon={<MoonIcon color='#1e1e34 ' />}

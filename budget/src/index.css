@@ -35,7 +35,7 @@ svg .pie-segment {
   /* colors */
   --accent: 183 74% 44%;
   --bkg: 190 60% 98%;
-  --bkg-dark: 240 27% 16%;
+  --bkg-dark: 224 100% 3%;
   --text: 185 26% 9%;
   --text-dark: 0 0% 87.93%;
   --muted: 183 8% 55%;
@@ -78,7 +78,7 @@ body {
   
 }
 
-#light {
+#dark {
   background-color: hsl(var(--bkg));
   color: hsl(var(--text));
   --bkg : 190 60% 98%; 
@@ -86,10 +86,10 @@ body {
   --border : 240 27% 16%;
 }
 
-#dark {
+#light {
   background-color: hsl(var(--bkg-dark));
   color: hsl(var(--text-dark));
-  --bkg :  240 27% 16%;
+  --bkg :  224 100% 3%;
   /* --bkg-dark : 190 60% 98%; */
   --text : 0 0% 87.93%;
   /* --text-dark : 185 26% 9%; */

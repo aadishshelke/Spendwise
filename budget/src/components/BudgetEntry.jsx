@@ -50,8 +50,10 @@ const BudgetEntry = () => {
         console.error('Error in sending email:', error.text);
     });
   };
-
-
+  let res = 1;
+  const print =() =>{
+    res = 0;
+  }
 
 
 
@@ -106,6 +108,7 @@ const BudgetEntry = () => {
     // }
   };
 
+
   return (
     <div >
       {/* <h2>Budget Entry</h2> */}
@@ -128,13 +131,13 @@ const BudgetEntry = () => {
             required
           />
         </div>
-        <button type="submit" style={{marginTop : '10px'}} className='btn btn--dark'>Submit</button>
+        <button type="submit" style={{marginTop : '10px'}} className='btn btn--dark' onClick={print}>Submit</button>
       </form>
       {/* <form onSubmit={sendEmail}>
         <button type="submit">Send OTP</button>
       </form> */}
-      {result===0 && <p>High amount for the category , for payment submit OTP sent on your email to verify</p>}
-      {result===1 && <p>You can proceed with the payment</p>}
+      {res===0 && <p>High amount for the category , for payment submit OTP sent on your email to verify</p>}
+      {/* {result===1 && <p>You can proceed with the payment</p>} */}
     </div>  
   );
 };
